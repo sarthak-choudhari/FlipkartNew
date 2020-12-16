@@ -20,6 +20,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import listener.ListenerTest;
 
 @Listeners(ListenerTest.class)
@@ -43,29 +44,31 @@ public class TestBase {
 	}
 
 	private WebDriver createDriver() {
-		String hubUrl = System.getProperty("hubUrl");
-
-		// If the hubUrl is specified use the remote driver, else try to use the local
-		// chrome driver.
-		if (hubUrl != null) {
-			String browserName = System.getProperty("browserName");
-			if (browserName == null) {
-				throw new RuntimeException("You must specify a browserName");
-			}
-			try {
-				return new RemoteWebDriver(new URL(hubUrl), getOptions(browserName));
-			} catch (MalformedURLException e) {
-				throw new RuntimeException("The supplied hubUrl: " + hubUrl + " is not a valid url.");
-			}
-		} else {
-
-			// If we're not using a hub, then attempt to instantiate a local chrome driver.
-			String driverPath = System.getProperty("webdriver.chrome.driver");
-			if (driverPath == null) {
-				throw new RuntimeException("You must specify either a hubUrl or a webdriver.chrome.driver path.");
-			}
-			return new ChromeDriver((ChromeOptions) getOptions("chrome"));
-		}
+		WebDriverManager.chromedriver().setup();
+		return new ChromeDriver();
+//		String hubUrl = System.getProperty("hubUrl");
+//
+//		// If the hubUrl is specified use the remote driver, else try to use the local
+//		// chrome driver.
+//		if (hubUrl != null) {
+//			String browserName = System.getProperty("browserName");
+//			if (browserName == null) {
+//				throw new RuntimeException("You must specify a browserName");
+//			}
+//			try {
+//				return new RemoteWebDriver(new URL(hubUrl), getOptions(browserName));
+//			} catch (MalformedURLException e) {
+//				throw new RuntimeException("The supplied hubUrl: " + hubUrl + " is not a valid url.");
+//			}
+//		} else {
+//
+//			// If we're not using a hub, then attempt to instantiate a local chrome driver.
+//			String driverPath = System.getProperty("webdriver.chrome.driver");
+//			if (driverPath == null) {
+//				throw new RuntimeException("You must specify either a hubUrl or a webdriver.chrome.driver path.");
+//			}
+//			return new ChromeDriver((ChromeOptions) getOptions("chrome"));
+//		}
 	}
 
 	private MutableCapabilities getOptions(String browserName) {

@@ -14,7 +14,7 @@ public class ProductPage extends BasePage {
 	@FindBy(xpath = "//*[@id='swatch-2-size']/a")
 	WebElement size;
 
-	@FindBy(xpath = "//button[contains(@class,'_2KpZ6l _2U9uOA _3v1-ww')]")
+	@FindBy(xpath = "//*[text()='ADD TO CART']/..")
 	WebElement addToCart;
 
 	@FindBy(xpath = "//a[contains(text(),'Court Royale AC Sneakers For Men')]")
@@ -42,6 +42,7 @@ public class ProductPage extends BasePage {
 
 	public void clickOnAddToCart() {
 		wait.forElementToBeClickable(addToCart);
+		scrollToPixel(150);
 		click(addToCart);
 		System.out.println("clicking on add to cart");
 	}

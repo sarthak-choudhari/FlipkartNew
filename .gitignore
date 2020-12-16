@@ -1,3 +1,5 @@
 *.project
 /test-output
-/target/
+/target
+/.settings
+*.class

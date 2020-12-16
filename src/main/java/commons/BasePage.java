@@ -35,7 +35,8 @@ public abstract class BasePage {
 
 	public static void click(WebElement webElement, int timeOutInSeconds) {
 		wait.forElementToBeClickable(webElement, timeOutInSeconds, Timeouts.POLLING_INTERVAL);
-		js.clickElement(webElement);
+//		js.clickElement(webElement);
+		webElement.click();
 	}
 
 	public static void sendKeys(WebElement webElement, String value, int timeOutInSeconds) {
