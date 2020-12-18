@@ -33,7 +33,8 @@ public void placeOrder() {
 	{
 		pincodeField.sendKeys("247662");
 		checkButton.click();
-	  OrderButton.click();
+	    OrderButton.click();
+	  
 	}
 }
 }

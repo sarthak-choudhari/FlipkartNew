@@ -34,11 +34,12 @@ public class RealmeMobile extends BaseMethod {
 	}
 
 	public void addToCart() {
-		
+
 		Set<String> allwindows = driver.getWindowHandles();
-		ArrayList<String> al = new ArrayList<>();
+		ArrayList<String> al = new ArrayList<String>();
 		al.addAll(allwindows);
 		driver.switchTo().window(al.get(1));
 		cartButton.click();
+
 	}
 }

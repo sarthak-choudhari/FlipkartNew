@@ -5,18 +5,36 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class FlipkartHomePage {
+import com.flipkart.generics.BaseMethod;
+
+public class FlipkartHomePage extends BaseMethod {
 	public WebDriver driver;
 	@FindBy(xpath = "//button[contains(.,'✕')]")
 	private WebElement crossButton;
+	@FindBy(xpath = "//input[@placeholder='Search for products, brands and more']")
+	private WebElement search;
+	@FindBy(xpath = "//button[@type='submit']")
+	private WebElement submitButton;
+	@FindBy(xpath = "//a[.='Flights']")
+	private WebElement flightmenu;
 
 	public FlipkartHomePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	public void homePage() throws InterruptedException {
+	public void loginPage() {
 		crossButton.click();
-		Thread.sleep(3000);
+	}
+	
+    public void flight() {
+    	waitExplicit(driver,flightmenu);
+    	flightmenu.click();
+    }
+    
+	public void searchFiled() {
+		waitExplicit(driver, search);
+		search.sendKeys("casual shoes");
+		submitButton.click();
 	}
 }

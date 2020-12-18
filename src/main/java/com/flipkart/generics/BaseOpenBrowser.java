@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeSuite;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseOpenBrowser implements AutoConstant{
-	public WebDriver driver;
+	public static WebDriver driver;
 	@BeforeSuite
 	public void start() {
 		Reporter.log("excecution start",true);
