@@ -66,5 +66,6 @@ public class FlipkartTest extends BaseOpenBrowser {
 		ps.windowSwitch();
 		ps.selectSize();
 		ps.addToCart();
+		//ps.aajhsj
 	}
 }
