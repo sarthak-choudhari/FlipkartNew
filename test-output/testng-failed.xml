@@ -5,7 +5,9 @@
     <classes>
       <class name="com.flipkart.test.FlipkartTest">
         <methods>
+          <include name="realmeMobile"/>
           <include name="start"/>
+          <include name="flightBooking"/>
           <include name="pumaShoes"/>
           <include name="openapp"/>
         </methods>

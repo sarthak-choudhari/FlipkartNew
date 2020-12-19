@@ -85,7 +85,7 @@ public class BaseMethod {
 		
 	}
 	public void waitToBeClickable(WebDriver driver,WebElement element) {
-		WebDriverWait wait=new WebDriverWait(driver, 20);
+		WebDriverWait wait=new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		
 	}

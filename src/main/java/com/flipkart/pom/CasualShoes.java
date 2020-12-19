@@ -38,8 +38,13 @@ public class CasualShoes extends BaseMethod {
 		clickJavaSriptExecutor(driver, whiteColourCheckbox);
 	}
 
-	public void selectShoes() {
+	public void selectShoes(){
 		waitToBeClickable(driver, desireProduct);
+		/*
+		 * try{ desireProduct.click(); }
+		 * catch(org.openqa.selenium.StaleElementReferenceException ex){
+		 * desireProduct.click(); }
+		 */
 		clickJavaSriptExecutor(driver, desireProduct);
 
 	}

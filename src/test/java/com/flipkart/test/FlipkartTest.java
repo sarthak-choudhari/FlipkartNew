@@ -22,8 +22,9 @@ public class FlipkartTest extends BaseOpenBrowser {
 		fh.loginPage();
 
 		ElectronicsGadget aa = new ElectronicsGadget(driver);
-		aa.electronicsSection();
+		//aa.electronicsSection();
 		aa.realmeMobileSection();
+		
 
 		RealmeMobile rm = new RealmeMobile(driver);
 		rm.chooseMobile();
@@ -48,7 +49,7 @@ public class FlipkartTest extends BaseOpenBrowser {
 		fb.searchFlight();
 
 		SelectFlight se = new SelectFlight(driver);
-		se.filter();
+		//se.filter();
 		se.bookFlight();
 	}
 
@@ -60,12 +61,12 @@ public class FlipkartTest extends BaseOpenBrowser {
 
 		CasualShoes cs = new CasualShoes(driver);
 		cs.filter();
-		cs.selectShoes();
+		//cs.selectShoes();
 
 		PumaShoes ps = new PumaShoes(driver);
 		ps.windowSwitch();
 		ps.selectSize();
 		ps.addToCart();
-		//ps.aajhsj
+
 	}
 }

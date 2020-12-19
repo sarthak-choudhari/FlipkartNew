@@ -23,11 +23,14 @@ public class Listeners implements ITestListener {
 	}
 
 	public void onTestFailure(ITestResult result) {
+		String methodName= result.getMethod().getMethodName();
 		
-		  TakesScreenshot ts=(TakesScreenshot)BaseOpenBrowser.driver; File
-		  srcfile=ts.getScreenshotAs(OutputType.FILE); try {
-		  FileUtils.copyFile(srcfile, new File("./Screenshots/failed.png")); }
-		  catch (IOException e) { // TODO Auto-generated catch block
+		  TakesScreenshot ts=(TakesScreenshot)BaseOpenBrowser.driver; 
+		  File srcfile=ts.getScreenshotAs(OutputType.FILE); 
+		  try {
+		  FileUtils.copyFile(srcfile, new File("./Screenshots/"+"failshot_"+methodName+"_"+".png")); }
+		  catch (IOException e) { 
+			  // TODO Auto-generated catch block
 		  e.printStackTrace(); }
 		 
 	}
