@@ -80,7 +80,7 @@ public class BaseMethod {
 		
 	}
 	public void elementToBeClickable(WebDriver driver,WebElement element) {
-		WebDriverWait wait=new WebDriverWait(driver, 20);
+		WebDriverWait wait=new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.elementToBeClickable(element)).click();
 		
 	}
@@ -93,5 +93,11 @@ public class BaseMethod {
 	public void clickJavaSriptExecutor(WebDriver driver, WebElement element) {
 		JavascriptExecutor js=(JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click()",element);
+	}
+	
+	public void scroll(WebDriver driver) {
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("scroll(0,400)");
+		
 	}
 }

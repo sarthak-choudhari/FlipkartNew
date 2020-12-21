@@ -22,7 +22,7 @@ public class ElectronicsGadget extends BaseMethod {
 
 	public void electronicsSection() {
 		movetoelement(driver, electronicsTooltip);
-		//realmeMobile.click();
+		
 
 	}
 	public void realmeMobileSection() {

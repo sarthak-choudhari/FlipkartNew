@@ -22,7 +22,7 @@ public class FlipkartTest extends BaseOpenBrowser {
 		fh.loginPage();
 
 		ElectronicsGadget aa = new ElectronicsGadget(driver);
-		//aa.electronicsSection();
+		aa.electronicsSection();
 		aa.realmeMobileSection();
 		
 
@@ -49,19 +49,19 @@ public class FlipkartTest extends BaseOpenBrowser {
 		fb.searchFlight();
 
 		SelectFlight se = new SelectFlight(driver);
-		//se.filter();
+		se.filter();
 		se.bookFlight();
 	}
 
 	@Test(priority = 3)
-	public void pumaShoes() {
+	public void pumaShoes() throws InterruptedException{
 		FlipkartHomePage fh = new FlipkartHomePage(driver);
 		fh.loginPage();
 		fh.searchFiled();
 
 		CasualShoes cs = new CasualShoes(driver);
 		cs.filter();
-		//cs.selectShoes();
+		cs.selectShoes();
 
 		PumaShoes ps = new PumaShoes(driver);
 		ps.windowSwitch();

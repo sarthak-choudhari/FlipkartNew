@@ -16,7 +16,7 @@ public class RealmeMobile extends BaseMethod {
 	@FindBy(xpath = "//div[contains(text(),'Realme Narzo 20')]")
 	private List<WebElement> Narzo20;
 
-	@FindBy(xpath = "//button[contains(@class,'_2KpZ6l _2U9uOA _3v1-ww')]")
+	@FindBy(xpath = "//ul[@class='row']/descendant::button[text()='ADD TO CART']")
 	private WebElement cartButton;
 
 	public RealmeMobile(WebDriver driver) {
